@@ -24,7 +24,7 @@ e.preventDefault()
 
 
 const URL= `${process.env.REACT_APP_BACKEND_URL}/api/email`
-console.log(URL)
+
 try {
    const response= await axios.post(URL,data)
 toast.success(response.data.message)
@@ -43,6 +43,7 @@ if (response.data.sucess) {
    
 } catch (error) {
   toast.error(error?.response?.data?.message)
+  console.log("error here",error)
   
 }
 }
